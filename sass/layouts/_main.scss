@@ -14,10 +14,12 @@
     background-color: variables.$color-black;
     margin-top: 6.125rem;
     position: relative;
-    z-index: -2;
+    z-index: 0;
     border-radius: 0.8rem;
+
     @include mixins.mq(medium) {
       margin-top: 8.625rem;
+      height: 37.5rem;
     }
     @include mixins.mq(large) {
       margin-top: 13.32rem;
@@ -51,11 +53,14 @@
     width: 100%;
     transform: translateY(-6.125rem);
     z-index: 5;
+
     @include mixins.mq(medium) {
       margin-bottom: 2rem;
       max-width: 70%;
       padding-left: 8%;
       transform: translateY(-8.625rem);
+      animation: 2s liner;
+      animation-name: slide-in-left;
     }
     @include mixins.mq(large) {
       margin-bottom: -4rem;
@@ -80,6 +85,8 @@
       width: 25rem;
       transform: translateY(6rem);
       padding: 3rem;
+      animation-duration: 2s;
+      animation-name: slide-in-right;
     }
     @include mixins.mq(large) {
       width: 27.5rem;
@@ -112,5 +119,33 @@
       font-weight: bold;
       font-size: 4.1rem;
     }
+  }
+}
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    @include mixins.mq(medium) {
+      transform: translate(-100%, -8.625rem);
+    }
+    @include mixins.mq(large) {
+      transform: translate(-100%, -13.32rem);
+    }
+  }
+  to {
+    transform: translateX(0);
+    @include mixins.mq(medium) {
+      transform: translate(0, -8.625rem);
+    }
+    @include mixins.mq(large) {
+      transform: translate(0, -13.32rem);
+    }
+  }
+}
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }

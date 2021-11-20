@@ -44,6 +44,9 @@
     justify-content: start;
     align-items: center;
     gap: 1.5rem;
+    & a {
+      transition: all ease 0.2s;
+    }
     & a:hover svg path,
     &:focus svg path {
       fill: variables.$color-orange;
