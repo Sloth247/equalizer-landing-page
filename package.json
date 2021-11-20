@@ -1,0 +1,14 @@
+{
+  "name": "starter-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass/main.scss css/style.css"
+  },
+  "author": "Yuko Horita",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.43.4"
+  }
+}

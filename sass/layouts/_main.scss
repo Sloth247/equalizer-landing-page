@@ -1,0 +1,116 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+.main {
+  @include mixins.mq(medium) {
+    padding: 0 2.5rem;
+    padding-bottom: 6rem;
+  }
+  @include mixins.mq(large) {
+    padding: 0 10.32rem;
+    padding-bottom: 7.2rem;
+  }
+
+  &__inner {
+    background-color: variables.$color-black;
+    margin-top: 6.125rem;
+    position: relative;
+    z-index: -2;
+    border-radius: 0.8rem;
+    @include mixins.mq(medium) {
+      margin-top: 8.625rem;
+    }
+    @include mixins.mq(large) {
+      margin-top: 13.32rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("../../img/bg-pattern-2.svg");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 80%;
+      z-index: -1;
+      @include mixins.mq(medium) {
+        background-position: top -19% center;
+        background-size: 40%;
+      }
+      @include mixins.mq(large) {
+        background-position: top -3rem right 55%;
+        background-size: 32%;
+      }
+    }
+  }
+  &__hero-img {
+    padding: 0 20%;
+    margin-bottom: -6.125rem;
+    width: 100%;
+    transform: translateY(-6.125rem);
+    z-index: 5;
+    @include mixins.mq(medium) {
+      margin-bottom: 2rem;
+      max-width: 70%;
+      padding-left: 8%;
+      transform: translateY(-8.625rem);
+    }
+    @include mixins.mq(large) {
+      margin-bottom: -4rem;
+      max-width: 60%;
+      padding-left: 10%;
+      transform: translateY(-13.32rem);
+    }
+  }
+  &__text-container {
+    display: grid;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: variables.$color-orange;
+    color: variables.$color-white;
+    border-radius: 0.8rem;
+    @include mixins.mq(medium) {
+      margin-top: 0;
+      position: absolute;
+      right: 3.625rem;
+      bottom: 0;
+      width: 25rem;
+      transform: translateY(6rem);
+      padding: 3rem;
+    }
+    @include mixins.mq(large) {
+      width: 27.5rem;
+      padding: 3.4rem;
+      transform: translateY(7.2rem);
+      right: 6rem;
+    }
+  }
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    @include mixins.mq(large) {
+      font-size: 2.5rem;
+    }
+  }
+  &__description {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    @include mixins.mq(large) {
+      font-size: 1.25rem;
+    }
+  }
+  &__description-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    z-index: 10;
+    &-bold {
+      font-weight: bold;
+      font-size: 4.1rem;
+    }
+  }
+}

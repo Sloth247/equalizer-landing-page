@@ -1,0 +1,71 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+*:focus-visible {
+  outline: dotted 3px #606c38;
+  outline-offset: 10px;
+}
+
+body {
+  font-family: variables.$font-primary;
+  font-size: 1.125rem;
+  font-weight: 400;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  @include mixins.mq(medium) {
+    background-image: url("../../img/bg-main-tablet.png");
+    background-repeat: no-repeat;
+    background-position: top -10rem left -20rem;
+    background-size: 150%;
+  }
+  @include mixins.mq(large) {
+    background-image: url("../../img/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-position: top -15rem left -18rem;
+    background-size: 130%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor:pointer
+}
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.wrapper {
+  padding: 0 1.5rem;
+
+  @include mixins.mq(large) {
+    padding: 0 10.32rem;
+  }
+}
+.wrapper-second {
+  padding: 0 2.25rem;
+}

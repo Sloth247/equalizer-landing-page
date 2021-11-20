@@ -1,0 +1,43 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.btn {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 18.5rem;
+  text-align: center;
+  padding: 0.9rem 0;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
+
+  @include mixins.mq(large) {
+    width: 100%;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  &-apple {
+    background-color: variables.$color-black;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$color-blue;
+      color: variables.$color-white;
+    }
+  }
+  &-android {
+    background-color: variables.$color-white;
+    color: variables.$color-black;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$color-yellow;
+      color: variables.$color-black;
+    }
+  }
+}

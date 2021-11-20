@@ -1,0 +1,58 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.header {
+  padding-top: 2.5rem;
+  background-image: url("../../img/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  @include mixins.mq(medium) {
+    padding-top: 3.8rem;
+    background-image: none;
+    position: relative;
+  }
+  &__bg-img {
+    display: none;
+    @include mixins.mq(medium) {
+      display: block;
+      position: absolute;
+      top: -2rem;
+      right: -2rem;
+      width: 16.625rem;
+    }
+    @include mixins.mq(large) {
+      top: -2rem;
+      right: 0;
+      width: 19.5rem;
+    }
+  }
+
+  &__title {
+    padding-top: 4rem;
+    font-size: 2.5rem;
+    @include mixins.mq(medium) {
+      padding-top: 6rem;
+      line-height: 1;
+      font-size: 4rem;
+      padding-right: 12rem;
+    }
+    @include mixins.mq(large) {
+      font-size: 5.5rem;
+      padding-top: 8rem;
+    }
+  }
+  &__description {
+    padding: 1.25rem 0 4.25rem 0;
+    line-height: 1.6;
+    @include mixins.mq(medium) {
+      padding-right: 11rem;
+      padding-bottom: 7rem;
+    }
+    @include mixins.mq(large) {
+      font-size: 1.25rem;
+      padding-right: 17rem;
+      padding-top: 3rem;
+      padding-bottom: 6.75rem;
+    }
+  }
+}
