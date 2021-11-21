@@ -15,3 +15,8 @@
     }
   }
 }
+@mixin prm {
+  @media (prefers-reduced-motion) {
+    @content;
+  }
+}

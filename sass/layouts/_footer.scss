@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 5.5rem;
   }
   &__inner {
     @include mixins.mq(medium) {
@@ -19,7 +18,7 @@
       align-items: center;
     }
     @include mixins.mq(large) {
-      gap: 6rem;
+      margin-left: 5.5rem;
     }
   }
   &__description {
@@ -33,6 +32,7 @@
     @include mixins.mq(large) {
       margin: 0;
       padding-right: 15rem;
+      margin-right: 6rem;
     }
 
     &-bold {
@@ -43,9 +43,12 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 1.5rem;
+
     & a {
       transition: all ease 0.2s;
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
     }
     & a:hover svg path,
     &:focus svg path {
